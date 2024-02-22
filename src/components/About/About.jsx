@@ -131,10 +131,10 @@ const About = () => {
           {/* tabs */}
           <div className='flex-1'>
             <Tabs defaultValue='information'>
-              <TabsList>
-                <TabsTrigger value='information'>Information</TabsTrigger>
-                <TabsTrigger value='subjects'>Subjects</TabsTrigger>
-                <TabsTrigger value='services'>Services</TabsTrigger>
+              <TabsList className='w-full grid xl:grid-cols-3 xl:max-w-[520px] xl:border-none dark:border-none'>
+                <TabsTrigger className='w-[162px] xl:w-auto' value='information'>Information</TabsTrigger>
+                <TabsTrigger className='w-[162px] xl:w-auto' value='subjects'>Subjects</TabsTrigger>
+                <TabsTrigger className='w-[162px] xl:w-auto' value='services'>Services</TabsTrigger>
               </TabsList>
               <div className='text-lg mt-12 xl:mt-8'>
                 <TabsContent value='information'>Information</TabsContent>
