@@ -15,7 +15,7 @@ import Socials from '@/components/others/Socials';
 
 const Hero = () => {
   return (
-    <section className='py-10 xl:py-20 h-[84vh] xl:pt-20 bg-bgmg bg-cover bg-no-repeat bg-bottom dark:bg-none'>
+    <section className='py-10 xl:py-20 h-auto xl:pt-20 bg-bgmg bg-cover bg-no-repeat bg-bottom dark:bg-none'>
       <div className="container mx-auto">
         <div className='flex justify-between space-x-8'>
           {/* Left side for large screen devices */}
@@ -39,7 +39,7 @@ const Hero = () => {
             {/* social links */}
             <div>
               <Socials
-                containerStyles='flex gap-x-6 mx-auto xl:mx-0'
+                containerStyles='flex gap-x-6 mx-auto xl:mx-0 text-center md:text-center lg:text-left xl:text-left '
                 iconStyles='text-[22px] text-foreground hover:text-primary transition-all'
               />
             </div>
@@ -97,7 +97,7 @@ const Hero = () => {
             containerStyle='relative grid-element w-[365px] h-[341px] md:w-[510px] md:h-[481px]'
           />
         </div>
-        <div className='hidden md:flex absolute left-2/4 bottom-44 xl:bottom-12 animate-bounce'>
+        <div className='hidden xl:flex absolute left-2/4 bottom-44 xl:bottom-12 animate-bounce'>
           <RiArrowDownSLine className='text-primary text-3xl' />
         </div>
       </div>

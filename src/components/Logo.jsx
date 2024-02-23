@@ -6,7 +6,7 @@ const Logo = () => {
     <Link
       href='/'>
       <Image
-        src='/logo.svg'
+        src='/Logo-1-svg.svg'
         alt='Macademics Writers'
         priority
         width={54}
