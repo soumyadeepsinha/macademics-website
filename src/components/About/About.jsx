@@ -2,6 +2,7 @@
 import DevImg from '@/components/others/DevImg';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Building2, Calendar, CheckCheck, GraduationCap, HomeIcon, MailIcon, PhoneCall } from 'lucide-react';
+import Image from 'next/image';
 
 const companyInfo = [
   {
@@ -54,6 +55,10 @@ const subjectData = [
   },
   {
     icon: <CheckCheck size={40} />,
+    text: 'Law',
+  },
+  {
+    icon: <CheckCheck size={40} />,
     text: 'Python',
     module1: 'Machine Learning',
     module2: 'Image detection',
@@ -87,30 +92,33 @@ const serviceData = [
     ]
   },
   {
-    title: 'Available Help',
+    title: 'technicalservices',
     data: [
       {
-        imgPath: '/about/vscode.svg'
+        imgSrc: '/about/vscode.png'
       },
       {
-        imgPath: '/about/notion.svg'
+        imgSrc: '/about/JavaScript.png'
       },
       {
-        imgPath: '/about/wordpress.svg'
+        imgSrc: '/about/wordpress.svg'
       },
       {
-        imgPath: '/about/figma.svg'
+        imgSrc: '/about/python.png'
       },
     ]
   }
 ]
 
 const About = () => {
+  const fetchData = (arr, title) => {
+    return arr.find((item) => item.title === title);
+  }
   return (
-    <section id='about' className='about-section mt-[2rem] lg:mt-0 h-auto pb-10 xl:py-20'>
+    <section className='about-section mt-[2rem] lg:mt-0 h-auto pb-10 xl:py-20'>
       <div className='container mx-auto'>
         <h2 className='section-title text-center mx-auto'>
-          About
+          Brief Description
         </h2>
         <br></br>
         <h3 className='heading-3 font-bold text-center mx-auto mb-6 xl:mb-12'> Macademics Writers </h3>
@@ -118,7 +126,7 @@ const About = () => {
           {/* Images */}
           <div className='relative hidden xl:flex flex-1'>
             <DevImg
-              containerStyle='relative w-[500px] h-[500px]'
+              containerStyle='relative w-[580px] h-[580px]'
               imgSrc='/Logo-2-svg-transpernt.svg'
             />
           </div>
@@ -130,11 +138,11 @@ const About = () => {
                 <TabsTrigger className='w-[158px] xl:w-auto' value='subjects'>Subjects</TabsTrigger>
                 <TabsTrigger className='w-[158px] xl:w-auto' value='services'>Services</TabsTrigger>
               </TabsList>
-              <div className='text-lg mt-12 xl:mt-8'>
+              <div className='text-lg mt-12 xl:mt-8 xl:mr-12'>
                 {/* Business information */}
                 <TabsContent value='information'>
                   <div className='text-center xl:text-left'>
-                    <h3 className='heading-3 mb-4'>Our Qualified Writers are Helping Students since 2021 </h3>
+                    <h3 className='heading-3 mb-3'>Our Qualified Writers are Helping Students since 2021 </h3>
                     <p className='subtitle max-w-xl mx-auto xl:mx-0'>Macademics is a unit of qualified and experienced writers to deliver different types of assignments. We put additional efforts to verify all sources of information that makes a research paper eligible to enhance your grades. </p>
                     {/* icons */}
                     <div className='grid xl:grid-cols-2 gap-4 mb-12'>
@@ -161,7 +169,7 @@ const About = () => {
                   <div className='text-center xl:text-left'>
                     <h4 className='heading-4 mb-4 text-center xl:text-left'>Our Experts can handle the following subjects
                     </h4>
-                    <div className="border-b border-primary"></div>
+                    <div className='border-b border-primary'></div>
                     <div>
                       <div className='flex flex-col gap-y-4 mb-12 mt-6 gap-x-3 text-primary'>
                         <h4 className='font-medium'>
@@ -195,7 +203,49 @@ const About = () => {
                     </div>
                   </div>
                 </TabsContent>
-                <TabsContent value='services'>Services</TabsContent>
+                <TabsContent value='services'>
+                  <div className='text-center xl:text-left'>
+                    <h3 className='heading-3 mb-6'>Services that you will get</h3>
+                    <div className='mb-12'>
+                      <h4 className='heading-4 text-muted-foreground mb-2'>Why Will you need a Writing Help?</h4>
+                      <div className="border-b border-primary"></div>
+                      <div>
+                        {fetchData(serviceData, 'availableservices').data.map((item, index) => {
+                          const { name } = item;
+                          return (
+                            <div
+                              key={index}
+                              className='w-2/4 text-center xl:text-left mx-auto xl:mx-0'>
+                              <div className='font-medium'>{name}</div>
+                            </div>
+                          )
+                        })}
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className='mb-2 font-semibold text-xl xl:text-left'>Technical writing services</h4>
+                      <div className='flex justify-center gap-x-10 xl:justify-start'>
+                        {fetchData(serviceData, 'technicalservices').data.map((item, index) => {
+                          const { imgSrc } = item;
+                          return (
+                            <div
+                              key={index}
+                              className='text-center mx-auto xl:text-left xl:mx-0'>
+                              <Image
+                                src={imgSrc}
+                                alt='Different software services from Macademics Writers'
+                                width={50}
+                                height={50}
+                                priority
+                                className='hover:scale-150'
+                              />
+                            </div>
+                          )
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                </TabsContent>
               </div>
             </Tabs>
           </div>

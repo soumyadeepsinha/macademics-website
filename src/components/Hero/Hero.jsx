@@ -15,14 +15,14 @@ import Socials from '@/components/others/Socials';
 
 const Hero = () => {
   return (
-    <section className='py-10 xl:py-20 h-auto xl:pt-20 bg-bgmg bg-cover bg-no-repeat bg-bottom dark:bg-none'>
+    <section className='py-8 xl:py-14 h-auto xl:pt-10 bg-bgmg bg-cover bg-no-repeat bg-bottom dark:bg-none'>
       <div className="container mx-auto">
         <div className='flex justify-between space-x-8'>
           {/* Left side for large screen devices */}
           {/* text */}
           <div className='max-w-[700px] flex flex-col justify-center mx-auto text-center xl:mx-0 xl:text-left'>
-            <div className='text-sm font-semibold text-primary uppercase mb-4 tracking-[4px]'>Macademics Writers</div>
-            <h1 className='heading-1 mb-4'>Your content helper!</h1>
+            <div className='text-2xl font-extrabold text-primary uppercase mb-2 tracking-[6px]'>Macademics Writers</div>
+            <h1 className='heading-1 mb-6'>Your content helper!</h1>
             <p className='subtitle max-w-[490px] mx-auto xl:mx-0'>Contact with us for stress free assignment help. You will get the best content help along without any involvement of AI or Plagiariasm. </p>
             <div className='flex flex-col gap-y-3 md:flex-row gap-x-3 mb-10 mx-auto xl:mx-0'>
               <Link href='/help'>
@@ -39,7 +39,7 @@ const Hero = () => {
             {/* social links */}
             <div>
               <Socials
-                containerStyles='flex gap-x-6 mx-auto xl:mx-0 text-center md:text-center lg:text-left xl:text-left '
+                containerStyles='flex gap-x-8 mx-auto xl:mx-0 justify-center xl:justify-start'
                 iconStyles='text-[22px] text-foreground hover:text-primary transition-all'
               />
             </div>

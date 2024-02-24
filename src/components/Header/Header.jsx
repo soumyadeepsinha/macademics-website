@@ -26,14 +26,14 @@ const Header = () => {
       sticky top-0 z-30 transition-all
       ${navpath === '/' && 'bg-[#fef9f5]'}`}
     >
-      <div className="container mx-auto">
+      <div className="w-[90%] container mx-auto">
         <div className="flex justify-between items-center">
           <Logo />
           <div className="flex items-center gap-x-6">
             {/* Navbar for desktop */}
             <Navbar
               containerStyles='hidden xl:flex items-center gap-x-8'
-              linkStyles='relative hover:text-primary transition-all'
+              linkStyles='relative hover:text-primary transition-all duration-700'
               underlineStyles='absolute left-0 top-full mt-[2px] h-[2px] bg-primary w-full'
             />
             <ThemeToggler />
